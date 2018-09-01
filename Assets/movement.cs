@@ -28,7 +28,9 @@ public class movement : MonoBehaviour {
         rb2d.AddForce(movement * speed);
 
         rigidVelocity = rb2d.velocity.magnitude;
-        velocityText.text = (rigidVelocity * 100).ToString("F1") + " km/h";
+        velocityText.text = (rigidVelocity * 10).ToString("F1") + " km/h";
     }
+
+
 
 }
