@@ -24,4 +24,6 @@ public class finishLine : MonoBehaviour {
             Debug.Log("Finish Line Reached!");
         }
     }
+
+
 }

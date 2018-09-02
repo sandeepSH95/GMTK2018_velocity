@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class playerEnter : MonoBehaviour {
+public class negPlayerEnter : MonoBehaviour
+{
 
     public CircleCollider2D playerCollider;
     public movement player;
@@ -13,20 +14,25 @@ public class playerEnter : MonoBehaviour {
     public Text leftBoost, rightBoost;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            player.speed += 0.05f;
+            if (player.speed > -0.5f)
+            {
+                player.speed -= 0.1f;
+            }
             Debug.Log(collision.name);
             spriteColor.color = boostColor;
             leftBoost.color = tempColor;
