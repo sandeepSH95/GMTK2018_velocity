@@ -29,9 +29,9 @@ public class negPlayerEnter : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (player.speed > -0.5f)
+            if (player.speed > 5.0f)
             {
-                player.speed -= 0.1f;
+                player.speed -= 0.5f;
             }
             Debug.Log(collision.name);
             spriteColor.color = boostColor;

@@ -7,7 +7,7 @@ public class movement : MonoBehaviour {
     public float speed;
     public float turn_speed;
     public Rigidbody2D rb2d;
-    public Text velocityText;
+    public Text velocityText, velocityText2;
     private float realTime;
     private float tempTime;
     private float readTime;
@@ -22,6 +22,7 @@ public class movement : MonoBehaviour {
     void Start () {
         rigidVelocity = 0.0f;
         velocityText.text = "0.0km/h";
+        velocityText2.text = "0.0km/h";
         isBoosting = false;
         //StartCoroutine(boostFactorLeak());
         realTime = 0.0f;
@@ -39,6 +40,7 @@ public class movement : MonoBehaviour {
 
         rigidVelocity = rb2d.velocity.magnitude;
         velocityText.text = (rigidVelocity * 10).ToString("F1") + " km/h";
+        velocityText2.text = velocityText.text;
         Debug.Log(Time.time);
         realTime = Time.time;
         readTime = realTime - tempTime;
@@ -49,7 +51,7 @@ public class movement : MonoBehaviour {
             {
                 if (speed >= 5.5f)
                 {
-                    speed -= 0.5f;
+                    speed -= 0.2f;
                 }
                 if (speed < 5.5f)
                 {
